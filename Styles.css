@@ -1,5 +1,55 @@
 ﻿body {
     margin: 0;
-    background-color: grey ;
+    background-color: black ;
+    text-align: center;
+    color: white;
+}
+
+.navbar ul{
+list-style-type: none;
+padding: 0px;
+margin: 0px;
+overflow: hidden;
+}
+
+.navbar a{
+    color: white;
+    background-color: grey;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    border-radius: 15px;
+}
+.navbar a:hover{
+    background-color: hsl(0, 0%, 10%);
+}
+.navbar li{
+    list-style-type: none;
+    display: inline-block;
+}
+.navbar a{
+        color: white;
+}
+
+.gallery {
+    display: inline-block;
+    border: 2px solid white;
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+}
+.gallery .description{
+    padding: 10px;
     text-align: center;
 }
+
+.gallery img {
+    max-width:100%;
+    max-height:88%;
+    height: fill;
+    size-adjust: true;
+    object-fit: cover;
+}
+
+
