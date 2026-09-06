@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Education - Terrence Wemer</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h1>Terrence Wemer</h1>
+        <p class="sidebar-subtitle">Software Engineer</p>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+        <nav>
+            <ul id="site-nav">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/work-experience.html">Work Experience</a></li>
+                <li><a href="/education.html" class="active">Education</a></li>
+                <li><a href="/about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="content">
+
+        <h2>Education</h2>
+
+        <!--
+            EXPERIENCE ITEM TEMPLATE (same style as the Work Experience page)
+            Copy one whole <div class="experience-item"> block per degree
+            and edit the text. Newest goes on top.
+        -->
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3>HBO-ICT: Game Development</h3>
+                <span class="experience-dates">Sep 2018 - Apr 2024</span>
+            </div>
+            <p class="experience-subtitle">Hogeschool van Amsterdam</p>
+            <ul>
+                <li>Minor: fashion application investigating the online shopping experience in Virtual Reality (C#, VR coding, UX/UI design)</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3>HAVO: E&amp;M</h3>
+                <span class="experience-dates">Sep 2013 - Sep 2018</span>
+            </div>
+            <p class="experience-subtitle">Tabor College Werenfridus, Avenhorn</p>
+            <ul>
+                <li>Graduate Degree</li>
+            </ul>
+        </div>
+        <!-- END EXPERIENCE ITEM -->
+
+        <h3 class="section-label">Certifications</h3>
+
+        <!-- CERTIFICATION ITEM TEMPLATE - copy for another certification -->
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3>[Exact certification title]</h3>
+                <span class="experience-dates">[Month Year]</span>
+            </div>
+            <p class="experience-subtitle">Anthropic</p>
+        </div>
+        <!-- END CERTIFICATION ITEM -->
+
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
