@@ -52,11 +52,24 @@ overflow: hidden;
     object-fit: cover;
 }
 
-/* ===== Resume page ===== */
+/* =====================================================================
+   Resume page
+   ---------------------------------------------------------------------
+   These custom properties ("CSS variables") are the knobs for the whole
+   page's look. Change a value here and everything using it updates -
+   e.g. change --resume-accent to restyle every accent color at once.
+   ===================================================================== */
+:root {
+    --resume-accent: #4da3ff;   /* highlight color: role text, headings, skill tags */
+    --resume-card-bg: #141414;  /* background of the sidebar and each section card */
+    --resume-border: #2a2a2a;   /* card borders and divider lines */
+    --resume-radius: 10px;      /* corner rounding on cards and the photo */
+    --resume-gap: 24px;         /* space between cards and between the two columns */
+}
 
 /* Centers the whole resume and stops lines getting too wide to read */
 .resume {
-    max-width: 700px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 20px;
     text-align: left;
@@ -65,21 +78,137 @@ overflow: hidden;
 /* The "Download PDF version" link at the top */
 .resume-download {
     text-align: center;
+    margin-bottom: 10px;
 }
 
-/* One block per heading: Summary, Skills, Experience, Education, Certifications */
-.resume-section {
-    margin-bottom: 30px;
+.resume-download a {
+    color: var(--resume-accent);
+    text-decoration: none;
+    font-weight: 600;
 }
 
-.resume-section h2 {
-    border-bottom: 2px solid grey;
-    padding-bottom: 5px;
+.resume-download a:hover {
+    text-decoration: underline;
 }
 
-/* One job or one degree */
+/* Two-column layout: fixed-width sidebar, flexible main column.
+   Below 700px wide (phones) it drops to a single stacked column. */
+.resume-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: var(--resume-gap);
+    align-items: start;
+}
+
+@media (max-width: 700px) {
+    .resume-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ----- Sidebar: photo, contact links, skills/languages/interests ----- */
+
+.resume-sidebar {
+    background: var(--resume-card-bg);
+    border: 1px solid var(--resume-border);
+    border-radius: var(--resume-radius);
+    padding: 20px;
+    text-align: center;
+}
+
+.resume-photo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--resume-accent);
+    margin-bottom: 12px;
+}
+
+.resume-role {
+    font-weight: 600;
+    color: var(--resume-accent);
+    margin: 0 0 16px 0;
+}
+
+.resume-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.9em;
+}
+
+.resume-contact a {
+    color: white;
+    text-decoration: none;
+}
+
+.resume-contact a:hover {
+    color: var(--resume-accent);
+}
+
+/* A labeled block inside the sidebar (Skills / Languages / Interests) */
+.resume-side-section {
+    text-align: left;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--resume-border);
+}
+
+.resume-side-section h3 {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: grey;
+    margin: 0 0 10px 0;
+}
+
+/* ----- Main column: Summary / Experience / Education cards ----- */
+
+.resume-main .resume-section {
+    background: var(--resume-card-bg);
+    border: 1px solid var(--resume-border);
+    border-radius: var(--resume-radius);
+    padding: 20px 24px;
+    margin-bottom: var(--resume-gap);
+}
+
+.resume-main .resume-section:last-child {
+    margin-bottom: 0;
+}
+
+.resume-main h2 {
+    color: var(--resume-accent);
+    border-bottom: 1px solid var(--resume-border);
+    padding-bottom: 8px;
+    margin-top: 0;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* One job or one degree, drawn as a timeline entry: a vertical line down
+   the left edge of the section with a dot next to each item. */
 .resume-item {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid var(--resume-border);
     margin-bottom: 20px;
+}
+
+.resume-item::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--resume-accent);
+}
+
+.resume-item:last-child {
+    margin-bottom: 0;
 }
 
 /* Puts the job/degree title on the left and the dates on the right */
@@ -88,15 +217,18 @@ overflow: hidden;
     justify-content: space-between;
     align-items: baseline;
     flex-wrap: wrap;
+    gap: 6px;
 }
 
 .resume-item-header h3 {
     margin: 0;
+    font-size: 1.05em;
 }
 
 .resume-dates {
     color: grey;
-    font-size: 0.9em;
+    font-size: 0.85em;
+    white-space: nowrap;
 }
 
 .resume-subtitle {
@@ -105,19 +237,31 @@ overflow: hidden;
     color: lightgrey;
 }
 
-/* Skill tags, laid out inline like little pills instead of a bullet list */
+.resume-item ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.resume-item li {
+    margin-bottom: 4px;
+}
+
+/* Skill/language/interest tags, laid out like little pills */
 .skills-list {
     list-style-type: none;
     padding: 0;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
 
 .skills-list li {
-    background-color: grey;
-    padding: 6px 12px;
-    border-radius: 15px;
+    background: rgba(77, 163, 255, 0.15);
+    color: var(--resume-accent);
+    border: 1px solid rgba(77, 163, 255, 0.4);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.85em;
 }
-
 

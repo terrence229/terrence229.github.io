@@ -21,11 +21,15 @@
 
     <!--
         RESUME PAGE
-        Every section below follows the same pattern: a <section> with a
-        heading, then one or more repeatable "blocks". To add a new job,
-        degree, or skill, copy the matching block (marked with a comment)
-        and edit the text inside it - you don't need to touch Styles.css
-        unless you want the look itself to change.
+        Layout: one <div class="resume-layout"> holding two columns -
+        <aside class="resume-sidebar"> (photo, contact info, skills,
+        languages, interests) and <div class="resume-main"> (summary,
+        experience, education). On narrow screens the CSS stacks these
+        into a single column (see the @media rule in Styles.css).
+
+        To add a job or a degree, copy an existing <article class="resume-item">
+        block and edit the text - the little dot + line on the left is
+        drawn automatically by CSS, you don't add it yourself.
     -->
 
     <main class="resume">
@@ -36,146 +40,159 @@
             <a href="Resume.pdf" target="_blank">Download PDF version</a>
         </p>
 
-        <p class="resume-download">
-            <a href="tel:+31610507796">+31 6 10507796</a>
-        </p>
+        <div class="resume-layout">
 
-        <section class="resume-section">
-            <h2>Summary</h2>
-            <p>
-                Software Engineer with an HBO-ICT Game Development background
-                (C#, Unity, UI/UX). Currently building on the UNI-Machine team
-                at marXact.
-            </p>
-        </section>
+            <aside class="resume-sidebar">
+                <img class="resume-photo" src="Photos/Professionele-foto.png" alt="Terrence Wemer">
+                <p class="resume-role">Software Engineer</p>
 
-        <section class="resume-section">
-            <h2>Skills</h2>
-            <!-- Each <li> is one skill/tag. Add or remove <li> lines freely. -->
-            <ul class="skills-list">
-                <li>C#</li>
-                <li>Unity</li>
-                <li>UI/UX Design</li>
-                <li>OOP</li>
-                <li>Android Studio</li>
-                <li>HTML5</li>
-                <li>VR</li>
-                <li>Debugging</li>
-                <li>Git</li>
-                <li>GitHub</li>
-                <li>Visual Studio</li>
-                <li>Jira</li>
-            </ul>
-        </section>
-
-        <section class="resume-section">
-            <h2>Experience</h2>
-
-            <!-- EXPERIENCE ITEM - copy this whole <article> block to add another job -->
-            <article class="resume-item">
-                <div class="resume-item-header">
-                    <h3>Software Engineer</h3>
-                    <span class="resume-dates">May 2024 - Present</span>
+                <div class="resume-contact">
+                    <a href="mailto:terrence@wemer.nl">terrence@wemer.nl</a>
+                    <a href="tel:+31610507796">+31 6 10507796</a>
+                    <a href="https://www.linkedin.com/in/terrence-wemer-0728761aa/" target="_blank">LinkedIn</a>
                 </div>
-                <p class="resume-subtitle">marXact, UNI-Machine team</p>
-            </article>
-            <!-- END EXPERIENCE ITEM -->
 
-            <article class="resume-item">
-                <div class="resume-item-header">
-                    <h3>Development Intern</h3>
-                    <span class="resume-dates">Sep 2023 - Apr 2024</span>
+                <div class="resume-side-section">
+                    <h3>Skills</h3>
+                    <!-- Each <li> is one skill/tag. Add or remove <li> lines freely. -->
+                    <ul class="skills-list">
+                        <li>C#</li>
+                        <li>Unity</li>
+                        <li>UI/UX Design</li>
+                        <li>OOP</li>
+                        <li>Android Studio</li>
+                        <li>HTML5</li>
+                        <li>VR</li>
+                        <li>Debugging</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Visual Studio</li>
+                        <li>Jira</li>
+                    </ul>
                 </div>
-                <p class="resume-subtitle">Thales</p>
-                <ul>
-                    <li>Developed a new interface for a certified project, to support development</li>
-                </ul>
-            </article>
 
-            <article class="resume-item">
-                <div class="resume-item-header">
-                    <h3>Development Intern</h3>
-                    <span class="resume-dates">Sep 2020 - Feb 2021</span>
+                <div class="resume-side-section">
+                    <h3>Languages</h3>
+                    <ul class="skills-list">
+                        <li>Dutch - native</li>
+                        <li>English - professional</li>
+                    </ul>
                 </div>
-                <p class="resume-subtitle">Arch Entertainment</p>
-                <ul>
-                    <li>Helped develop an RTS game in C#</li>
-                    <li>Team-work</li>
-                </ul>
-            </article>
 
-            <article class="resume-item">
-                <div class="resume-item-header">
-                    <h3>Bakery Employee</h3>
-                    <span class="resume-dates">Oct 2017 - Sep 2023</span>
+                <div class="resume-side-section">
+                    <h3>Interests</h3>
+                    <ul class="skills-list">
+                        <li>Online gaming</li>
+                        <li>My dog</li>
+                        <li>Going out with friends</li>
+                    </ul>
                 </div>
-                <p class="resume-subtitle">Bakkerij Koning, De Goorn</p>
-                <ul>
-                    <li>Eased the process of baking and distribution</li>
-                    <li>Night shifts</li>
-                </ul>
-            </article>
+            </aside>
 
-            <article class="resume-item">
-                <div class="resume-item-header">
-                    <h3>Construction Worker</h3>
-                    <span class="resume-dates">Summers</span>
-                </div>
-                <p class="resume-subtitle">Oppermannen.nl, Avenhorn</p>
-                <ul>
-                    <li>During summer vacation, full-time paving and other construction jobs</li>
-                    <li>Physically demanding work</li>
-                </ul>
-            </article>
+            <div class="resume-main">
 
-        </section>
+                <section class="resume-section">
+                    <h2>Summary</h2>
+                    <p>
+                        Software Engineer with an HBO-ICT Game Development background
+                        (C#, Unity, UI/UX). Currently building on the UNI-Machine team
+                        at marXact.
+                    </p>
+                </section>
 
-        <section class="resume-section">
-            <h2>Education</h2>
+                <section class="resume-section">
+                    <h2>Experience</h2>
 
-            <!-- EDUCATION ITEM - copy this whole <article> block to add another degree -->
-            <article class="resume-item">
-                <div class="resume-item-header">
-                    <h3>HBO-ICT: Game Development</h3>
-                    <span class="resume-dates">Sep 2018 - Apr 2024</span>
-                </div>
-                <p class="resume-subtitle">Hogeschool van Amsterdam</p>
-                <ul>
-                    <li>Minor: fashion application to investigate online shopping experience in VR (C#, VR coding, UX/UI designing)</li>
-                </ul>
-            </article>
-            <!-- END EDUCATION ITEM -->
+                    <!-- EXPERIENCE ITEM - copy this whole <article> block to add another job -->
+                    <article class="resume-item">
+                        <div class="resume-item-header">
+                            <h3>Software Engineer</h3>
+                            <span class="resume-dates">May 2024 - Present</span>
+                        </div>
+                        <p class="resume-subtitle">marXact, UNI-Machine team</p>
+                    </article>
+                    <!-- END EXPERIENCE ITEM -->
 
-            <article class="resume-item">
-                <div class="resume-item-header">
-                    <h3>HAVO: E&amp;M</h3>
-                    <span class="resume-dates">Sep 2013 - Sep 2018</span>
-                </div>
-                <p class="resume-subtitle">Tabor College Werenfridus, Avenhorn</p>
-                <ul>
-                    <li>Graduate Degree</li>
-                </ul>
-            </article>
+                    <article class="resume-item">
+                        <div class="resume-item-header">
+                            <h3>Development Intern</h3>
+                            <span class="resume-dates">Sep 2023 - Apr 2024</span>
+                        </div>
+                        <p class="resume-subtitle">Thales</p>
+                        <ul>
+                            <li>Developed a new interface for a certified project, to support development</li>
+                        </ul>
+                    </article>
 
-        </section>
+                    <article class="resume-item">
+                        <div class="resume-item-header">
+                            <h3>Development Intern</h3>
+                            <span class="resume-dates">Sep 2020 - Feb 2021</span>
+                        </div>
+                        <p class="resume-subtitle">Arch Entertainment</p>
+                        <ul>
+                            <li>Helped develop an RTS game in C#</li>
+                            <li>Team-work</li>
+                        </ul>
+                    </article>
 
-        <section class="resume-section">
-            <h2>Languages</h2>
-            <ul class="skills-list">
-                <li>Dutch - native</li>
-                <li>English - full professional proficiency</li>
-            </ul>
-        </section>
+                    <article class="resume-item">
+                        <div class="resume-item-header">
+                            <h3>Bakery Employee</h3>
+                            <span class="resume-dates">Oct 2017 - Sep 2023</span>
+                        </div>
+                        <p class="resume-subtitle">Bakkerij Koning, De Goorn</p>
+                        <ul>
+                            <li>Eased the process of baking and distribution</li>
+                            <li>Night shifts</li>
+                        </ul>
+                    </article>
 
-        <section class="resume-section">
-            <h2>Interests</h2>
-            <ul class="skills-list">
-                <li>Online gaming</li>
-                <li>My dog</li>
-                <li>Going out with friends</li>
-            </ul>
-        </section>
+                    <article class="resume-item">
+                        <div class="resume-item-header">
+                            <h3>Construction Worker</h3>
+                            <span class="resume-dates">Summers</span>
+                        </div>
+                        <p class="resume-subtitle">Oppermannen.nl, Avenhorn</p>
+                        <ul>
+                            <li>During summer vacation, full-time paving and other construction jobs</li>
+                            <li>Physically demanding work</li>
+                        </ul>
+                    </article>
 
+                </section>
+
+                <section class="resume-section">
+                    <h2>Education</h2>
+
+                    <!-- EDUCATION ITEM - copy this whole <article> block to add another degree -->
+                    <article class="resume-item">
+                        <div class="resume-item-header">
+                            <h3>HBO-ICT: Game Development</h3>
+                            <span class="resume-dates">Sep 2018 - Apr 2024</span>
+                        </div>
+                        <p class="resume-subtitle">Hogeschool van Amsterdam</p>
+                        <ul>
+                            <li>Minor: fashion application to investigate online shopping experience in VR (C#, VR coding, UX/UI designing)</li>
+                        </ul>
+                    </article>
+                    <!-- END EDUCATION ITEM -->
+
+                    <article class="resume-item">
+                        <div class="resume-item-header">
+                            <h3>HAVO: E&amp;M</h3>
+                            <span class="resume-dates">Sep 2013 - Sep 2018</span>
+                        </div>
+                        <p class="resume-subtitle">Tabor College Werenfridus, Avenhorn</p>
+                        <ul>
+                            <li>Graduate Degree</li>
+                        </ul>
+                    </article>
+
+                </section>
+
+            </div>
+        </div>
     </main>
 </body>
 </html>
