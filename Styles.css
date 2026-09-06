@@ -1,254 +1,130 @@
-﻿body {
+/* =====================================================================
+   Design tokens
+   ---------------------------------------------------------------------
+   Change a color/size here and it updates everywhere it's used below.
+   ===================================================================== */
+:root {
+    --bg: #0d0d0d;          /* page background */
+    --sidebar-bg: #141414;  /* left navigation bar background */
+    --border: #2a2a2a;      /* dividing lines */
+    --text: #f0f0f0;        /* main text color */
+    --text-muted: #9a9a9a;  /* secondary/quieter text */
+    --accent: #4da3ff;      /* highlight color: active nav link, headings, tags */
+    --radius: 10px;         /* corner rounding used on cards/buttons/images */
+    --sidebar-width: 220px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
-    background-color: black ;
-    text-align: center;
-    color: white;
-}
-
-.navbar ul{
-list-style-type: none;
-padding: 0px;
-margin: 0px;
-overflow: hidden;
-}
-
-.navbar a{
-    color: white;
-    background-color: grey;
-    text-decoration: none;
-    padding: 15px;
-    display: block;
-    text-align: center;
-    border-radius: 15px;
-}
-.navbar a:hover{
-    background-color: hsl(0, 0%, 10%);
-}
-.navbar li{
-    list-style-type: none;
-    display: inline-block;
-}
-.navbar a{
-        color: white;
-}
-
-.gallery {
-    display: inline-block;
-    border: 2px solid white;
-    margin: 5px;
-    width: 200px;
-    height: 200px;
-}
-.gallery .description{
-    padding: 10px;
-    text-align: center;
-}
-
-.gallery img {
-    max-width:100%;
-    max-height:88%;
-    height: fill;
-    size-adjust: true;
-    object-fit: cover;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
 }
 
 /* =====================================================================
-   Resume page
-   ---------------------------------------------------------------------
-   These custom properties ("CSS variables") are the knobs for the whole
-   page's look. Change a value here and everything using it updates -
-   e.g. change --resume-accent to restyle every accent color at once.
+   Layout: a fixed sidebar on the left, page content pushed to the right
+   of it. On narrow screens (phones) the sidebar becomes a normal-flow
+   bar across the top instead, and the content sits below it.
    ===================================================================== */
-:root {
-    --resume-accent: #4da3ff;   /* highlight color: role text, headings, skill tags */
-    --resume-card-bg: #141414;  /* background of the sidebar and each section card */
-    --resume-border: #2a2a2a;   /* card borders and divider lines */
-    --resume-radius: 10px;      /* corner rounding on cards and the photo */
-    --resume-gap: 24px;         /* space between cards and between the two columns */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border);
+    padding: 30px 20px;
 }
 
-/* Centers the whole resume and stops lines getting too wide to read */
-.resume {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: left;
+.sidebar h1 {
+    font-size: 1.3em;
+    margin: 0 0 6px 0;
 }
 
-/* The "Download PDF version" link at the top */
-.resume-download {
-    text-align: center;
-    margin-bottom: 10px;
+.sidebar .sidebar-subtitle {
+    font-size: 0.85em;
+    color: var(--text-muted);
+    margin: 0 0 30px 0;
 }
 
-.resume-download a {
-    color: var(--resume-accent);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.resume-download a:hover {
-    text-decoration: underline;
-}
-
-/* Two-column layout: fixed-width sidebar, flexible main column.
-   Below 700px wide (phones) it drops to a single stacked column. */
-.resume-layout {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: var(--resume-gap);
-    align-items: start;
-}
-
-@media (max-width: 700px) {
-    .resume-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ----- Sidebar: photo, contact links, skills/languages/interests ----- */
-
-.resume-sidebar {
-    background: var(--resume-card-bg);
-    border: 1px solid var(--resume-border);
-    border-radius: var(--resume-radius);
-    padding: 20px;
-    text-align: center;
-}
-
-.resume-photo {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--resume-accent);
-    margin-bottom: 12px;
-}
-
-.resume-role {
-    font-weight: 600;
-    color: var(--resume-accent);
-    margin: 0 0 16px 0;
-}
-
-.resume-contact {
+.sidebar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    font-size: 0.9em;
-}
-
-.resume-contact a {
-    color: white;
-    text-decoration: none;
-}
-
-.resume-contact a:hover {
-    color: var(--resume-accent);
-}
-
-/* A labeled block inside the sidebar (Skills / Languages / Interests) */
-.resume-side-section {
-    text-align: left;
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid var(--resume-border);
-}
-
-.resume-side-section h3 {
-    font-size: 0.8em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: grey;
-    margin: 0 0 10px 0;
-}
-
-/* ----- Main column: Summary / Experience / Education cards ----- */
-
-.resume-main .resume-section {
-    background: var(--resume-card-bg);
-    border: 1px solid var(--resume-border);
-    border-radius: var(--resume-radius);
-    padding: 20px 24px;
-    margin-bottom: var(--resume-gap);
-}
-
-.resume-main .resume-section:last-child {
-    margin-bottom: 0;
-}
-
-.resume-main h2 {
-    color: var(--resume-accent);
-    border-bottom: 1px solid var(--resume-border);
-    padding-bottom: 8px;
-    margin-top: 0;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* One job or one degree, drawn as a timeline entry: a vertical line down
-   the left edge of the section with a dot next to each item. */
-.resume-item {
-    position: relative;
-    padding-left: 20px;
-    border-left: 2px solid var(--resume-border);
-    margin-bottom: 20px;
-}
-
-.resume-item::before {
-    content: "";
-    position: absolute;
-    left: -7px;
-    top: 4px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--resume-accent);
-}
-
-.resume-item:last-child {
-    margin-bottom: 0;
-}
-
-/* Puts the job/degree title on the left and the dates on the right */
-.resume-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
     gap: 6px;
 }
 
-.resume-item-header h3 {
-    margin: 0;
-    font-size: 1.05em;
+.sidebar nav a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    color: var(--text);
+    text-decoration: none;
 }
 
-.resume-dates {
-    color: grey;
-    font-size: 0.85em;
-    white-space: nowrap;
+.sidebar nav a:hover {
+    background: var(--border);
 }
 
-.resume-subtitle {
-    margin: 2px 0 8px 0;
-    font-style: italic;
-    color: lightgrey;
+/* Marks the link for the page currently being viewed - add class="active"
+   to the matching <a> on each page (see the HTML files). */
+.sidebar nav a.active {
+    background: var(--accent);
+    color: #06121f;
+    font-weight: 600;
 }
 
-.resume-item ul {
-    margin: 0;
-    padding-left: 20px;
+.content {
+    margin-left: var(--sidebar-width);
+    padding: 50px 60px;
+    max-width: 760px;
 }
 
-.resume-item li {
-    margin-bottom: 4px;
+@media (max-width: 700px) {
+    .sidebar {
+        position: static;
+        width: auto;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
 }
 
-/* Skill/language/interest tags, laid out like little pills */
-.skills-list {
-    list-style-type: none;
+/* =====================================================================
+   Shared content styles (headings, tags, photo gallery)
+   ===================================================================== */
+
+.content h2 {
+    color: var(--accent);
+    margin-top: 0;
+}
+
+.content p {
+    color: var(--text);
+}
+
+/* Small pill-shaped tags, e.g. skills or tech-used labels */
+.tag-list {
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
@@ -256,12 +132,65 @@ overflow: hidden;
     gap: 8px;
 }
 
-.skills-list li {
+.tag-list li {
     background: rgba(77, 163, 255, 0.15);
-    color: var(--resume-accent);
+    color: var(--accent);
     border: 1px solid rgba(77, 163, 255, 0.4);
     padding: 5px 12px;
     border-radius: 999px;
     font-size: 0.85em;
 }
 
+/* One project entry on the Projects page */
+.project-card {
+    background: var(--sidebar-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 24px;
+}
+
+.project-card:last-child {
+    margin-bottom: 0;
+}
+
+.project-card h3 {
+    margin: 0 0 6px 0;
+}
+
+.project-card .project-links a {
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.project-card .project-links a:hover {
+    text-decoration: underline;
+}
+
+/* Photo gallery used on the About Me page */
+.gallery {
+    display: inline-block;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+    background: var(--sidebar-bg);
+}
+
+.gallery .description {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--text-muted);
+}
+
+.gallery img {
+    max-width: 100%;
+    max-height: 88%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}

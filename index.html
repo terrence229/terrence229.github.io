@@ -1,30 +1,48 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Terrence Wemer</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
-    
-    <h1>Terrence Wemer</h1>
 
-    <nav class="navbar">
+    <!-- SIDEBAR - the same block is copied at the top of every page.
+         The only thing that changes per page is which link has class="active". -->
+    <aside class="sidebar">
+        <h1>Terrence Wemer</h1>
+        <p class="sidebar-subtitle">Software Engineer</p>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="active">Home</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <ul>
-            
-            <li><a href="/index.html">Home </a></li>
-            <li><a href="/projects.html">projects </a></li>
-            <li><a href="/about.html">About me </a></li>
-            <li><a href="/resume.html">Resume </a></li>
-            <li><a href="/contact.html">Contact page</a></li>
-        </ul>
+    <div class="content">
 
-    </nav>
+        <h2>Hi, I'm Terrence</h2>
+        <p>
+            I'm a Software Engineer currently working on the UNI-Machine team
+            at marXact, building software around GNSS field data collection.
+            I graduated HBO-ICT: Game Development at the Hogeschool van
+            Amsterdam, where I picked up C#, Unity, and UI/UX design - skills
+            I still use daily.
+        </p>
+        <p>
+            Before marXact I was a development intern at Thales, where I built
+            an interface for a certified project, and before that at Arch
+            Entertainment, helping build an RTS game in C#.
+        </p>
+        <p>
+            Take a look at my <a href="/projects.html">projects</a>, or read
+            more <a href="/about.html">about me</a> as a person.
+        </p>
 
-<main>
-    <h3>I'm hosted with GitHub Pages.</h3>
-</main>
+    </div>
+
 </body>
 </html>

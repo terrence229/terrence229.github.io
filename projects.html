@@ -3,22 +3,76 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Projects - Terrence Wemer</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
-    <h1>Terrence Wemer</h1>
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="/index.html">home </a></li>
-            <li><a href="/projects.html">projects </a></li>
-            <li><a href="/about.html">about Me </a></li>
-            <li><a href="/resume.html">Resume </a></li>
-            <li><a href="/contact.html">contact Page</a></li>
-        </ul>
+    <aside class="sidebar">
+        <h1>Terrence Wemer</h1>
+        <p class="sidebar-subtitle">Software Engineer</p>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/projects.html" class="active">Projects</a></li>
+                <li><a href="/about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-    </nav>
+    <div class="content">
+
+        <h2>Projects</h2>
+        <p>A few things I've built. More detail on each is coming soon.</p>
+
+        <!--
+            PROJECT CARD TEMPLATE
+            Copy one whole <div class="project-card"> block per project and
+            fill in the bracketed text. Delete the <ul class="tag-list"> or
+            the .project-links <p> if a project doesn't need them.
+        -->
+        <div class="project-card">
+            <h3>[Project Name]</h3>
+            <p>[One or two sentences about what this project is and what it does.]</p>
+            <ul class="tag-list">
+                <li>[Tech 1]</li>
+                <li>[Tech 2]</li>
+                <li>[Tech 3]</li>
+            </ul>
+            <p class="project-links">
+                <a href="[link]" target="_blank">Live demo</a>
+                <a href="[link]" target="_blank">Source code</a>
+            </p>
+        </div>
+        <!-- END PROJECT CARD -->
+
+        <div class="project-card">
+            <h3>[Project Name]</h3>
+            <p>[One or two sentences about what this project is and what it does.]</p>
+            <ul class="tag-list">
+                <li>[Tech 1]</li>
+                <li>[Tech 2]</li>
+            </ul>
+            <p class="project-links">
+                <a href="[link]" target="_blank">Live demo</a>
+                <a href="[link]" target="_blank">Source code</a>
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>[Project Name]</h3>
+            <p>[One or two sentences about what this project is and what it does.]</p>
+            <ul class="tag-list">
+                <li>[Tech 1]</li>
+                <li>[Tech 2]</li>
+            </ul>
+            <p class="project-links">
+                <a href="[link]" target="_blank">Live demo</a>
+                <a href="[link]" target="_blank">Source code</a>
+            </p>
+        </div>
+
+    </div>
 
 </body>
 </html>
