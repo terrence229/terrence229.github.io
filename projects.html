@@ -3,6 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projects - Terrence Wemer</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
@@ -11,8 +12,9 @@
     <aside class="sidebar">
         <h1>Terrence Wemer</h1>
         <p class="sidebar-subtitle">Software Engineer</p>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
         <nav>
-            <ul>
+            <ul id="site-nav">
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/projects.html" class="active">Projects</a></li>
                 <li><a href="/work-experience.html">Work Experience</a></li>
@@ -84,5 +86,6 @@
 
     </div>
 
+    <script src="script.js" defer></script>
 </body>
 </html>

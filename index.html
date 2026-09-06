@@ -3,18 +3,22 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Terrence Wemer</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
 
     <!-- SIDEBAR - the same block is copied at the top of every page.
-         The only thing that changes per page is which link has class="active". -->
+         The only thing that changes per page is which link has class="active".
+         The nav-toggle button only shows up on narrow (mobile) screens - see
+         script.js for the show/hide logic and Styles.css for when it appears. -->
     <aside class="sidebar">
         <h1>Terrence Wemer</h1>
         <p class="sidebar-subtitle">Software Engineer</p>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
         <nav>
-            <ul>
+            <ul id="site-nav">
                 <li><a href="/index.html" class="active">Home</a></li>
                 <li><a href="/projects.html">Projects</a></li>
                 <li><a href="/work-experience.html">Work Experience</a></li>
@@ -45,5 +49,6 @@
 
     </div>
 
+    <script src="script.js" defer></script>
 </body>
 </html>

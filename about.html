@@ -3,6 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About Me - Terrence Wemer</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
@@ -11,8 +12,9 @@
     <aside class="sidebar">
         <h1>Terrence Wemer</h1>
         <p class="sidebar-subtitle">Software Engineer</p>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
         <nav>
-            <ul>
+            <ul id="site-nav">
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/projects.html">Projects</a></li>
                 <li><a href="/work-experience.html">Work Experience</a></li>
@@ -23,47 +25,54 @@
 
     <div class="content">
 
-        <h2>About Me</h2>
+        <!-- HERO: photo + headline/tagline side by side -->
+        <div class="about-hero">
+            <img src="Photos/Professionele-foto.png" alt="Terrence Wemer">
+            <div>
+                <h2>Hey, I'm Terrence</h2>
+                <p class="tagline">Software Engineer. Off the clock: gaming, riding, and my dog.</p>
+            </div>
+        </div>
+
         <p>
-            [A few sentences about who you are outside of work - where you're
-            from, what you're into, what kind of person you are. The photos
-            below are a start, write around them.]
-        </p>
-        <p>
-            When I'm not coding I'm usually out on my motorcycle, snowboarding
-            in winter, gaming online, or hanging out with friends - and my dog
-            is never far away.
+            I work as a Software Engineer on the UNI-Machine team at marXact -
+            you can read more about that on the <a href="/work-experience.html">Work Experience</a>
+            page. Outside of that, I keep busy in a few different ways.
         </p>
 
-        <div class="gallery">
-            <a href="Photos/Professionele-foto.png" target="_blank">
-                <img src="Photos/Professionele-foto.png" alt="Terrence Wemer">
-            </a>
-            <div class="description">This is me</div>
-        </div>
+        <p>When I'm not at a desk, you'll usually find me:</p>
+        <ul class="plain-list">
+            <li>Riding my motorcycle</li>
+            <li>Snowboarding in winter</li>
+            <li>Gaming online</li>
+            <li>Hanging out with friends</li>
+            <li>Spending time with my dog</li>
+        </ul>
 
-        <div class="gallery">
-            <a href="Photos/carnaval-vrienden.png" target="_blank">
-                <img src="Photos/carnaval-vrienden.png" alt="Hanging out with friends at carnaval">
-            </a>
-            <div class="description">Hanging out with friends</div>
-        </div>
-
-        <div class="gallery">
-            <a href="Photos/Riding-motorcycle.png" target="_blank">
-                <img src="Photos/Riding-motorcycle.png" alt="Riding a motorcycle">
-            </a>
-            <div class="description">Riding a motorcycle</div>
-        </div>
-
-        <div class="gallery">
-            <a href="Photos/Snowboarding.png" target="_blank">
-                <img src="Photos/Snowboarding.png" alt="Snowboarding">
-            </a>
-            <div class="description">Snowboarding</div>
+        <h3 class="section-label">A Few Snapshots</h3>
+        <div class="photo-grid">
+            <figure>
+                <a href="Photos/carnaval-vrienden.png" target="_blank">
+                    <img src="Photos/carnaval-vrienden.png" alt="Hanging out with friends at carnaval">
+                </a>
+                <figcaption>Hanging out with friends</figcaption>
+            </figure>
+            <figure>
+                <a href="Photos/Riding-motorcycle.png" target="_blank">
+                    <img src="Photos/Riding-motorcycle.png" alt="Riding a motorcycle">
+                </a>
+                <figcaption>Riding a motorcycle</figcaption>
+            </figure>
+            <figure>
+                <a href="Photos/Snowboarding.png" target="_blank">
+                    <img src="Photos/Snowboarding.png" alt="Snowboarding">
+                </a>
+                <figcaption>Snowboarding</figcaption>
+            </figure>
         </div>
 
     </div>
 
+    <script src="script.js" defer></script>
 </body>
 </html>
