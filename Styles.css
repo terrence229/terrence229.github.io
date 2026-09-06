@@ -168,6 +168,70 @@ body {
     text-decoration: underline;
 }
 
+/* Cover image at the top of a project card */
+.project-image {
+    width: 100%;
+    border-radius: var(--radius);
+    margin-bottom: 16px;
+    display: block;
+}
+
+/* =====================================================================
+   Work Experience page: each job/degree drawn as a timeline entry - a
+   vertical line down the left edge with a dot next to each item.
+   ===================================================================== */
+
+.experience-item {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid var(--border);
+    margin-bottom: 24px;
+}
+
+.experience-item::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.experience-item:last-child {
+    margin-bottom: 0;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.experience-header h3 {
+    margin: 0;
+}
+
+.experience-dates {
+    color: var(--text-muted);
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
+.experience-subtitle {
+    margin: 2px 0 8px 0;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.experience-item ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
 /* Photo gallery used on the About Me page */
 .gallery {
     display: inline-block;
