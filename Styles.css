@@ -52,4 +52,72 @@ overflow: hidden;
     object-fit: cover;
 }
 
+/* ===== Resume page ===== */
+
+/* Centers the whole resume and stops lines getting too wide to read */
+.resume {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+/* The "Download PDF version" link at the top */
+.resume-download {
+    text-align: center;
+}
+
+/* One block per heading: Summary, Skills, Experience, Education, Certifications */
+.resume-section {
+    margin-bottom: 30px;
+}
+
+.resume-section h2 {
+    border-bottom: 2px solid grey;
+    padding-bottom: 5px;
+}
+
+/* One job or one degree */
+.resume-item {
+    margin-bottom: 20px;
+}
+
+/* Puts the job/degree title on the left and the dates on the right */
+.resume-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.resume-item-header h3 {
+    margin: 0;
+}
+
+.resume-dates {
+    color: grey;
+    font-size: 0.9em;
+}
+
+.resume-subtitle {
+    margin: 2px 0 8px 0;
+    font-style: italic;
+    color: lightgrey;
+}
+
+/* Skill tags, laid out inline like little pills instead of a bullet list */
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li {
+    background-color: grey;
+    padding: 6px 12px;
+    border-radius: 15px;
+}
+
 
