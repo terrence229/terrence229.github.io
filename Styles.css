@@ -290,6 +290,37 @@ body {
     padding-left: 20px;
 }
 
+/* Row of pill-shaped contact buttons (email, LinkedIn, GitHub) on the
+   Home page, styled to match the .tag-list pills used elsewhere. */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(77, 163, 255, 0.15);
+    color: var(--accent);
+    border: 1px solid rgba(77, 163, 255, 0.4);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.contact-links a:hover {
+    background: rgba(77, 163, 255, 0.25);
+}
+
+.contact-links svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
 /* =====================================================================
    About Me page
    ===================================================================== */
